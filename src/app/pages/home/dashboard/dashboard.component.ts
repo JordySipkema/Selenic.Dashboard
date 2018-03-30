@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getLatest(): EmonData {
-    if (this.data !== undefined) {
+    if (this.data !== undefined && this.data.length) {
       return this.data[0];
     } else {
       return EmonData.Empty();
@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getUsage(): number {
-    if (this.data !== undefined) {
+    if (this.data !== undefined && this.data.length) {
       return Math.abs(this.data[0].energy_total - this.data[this.data.length - 1].energy_total);
     } else {
       return 0;

@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
+
   constructor(public location: Location, public router: Router) {}
 
   ngOnInit() {
-    if (this.location.path() =='' || this.location.path() == '/home') {
+    if (this.location.path() === '' || this.location.path() === '/home') {
       this.router.navigate(['/home/dashboard']);
     }
   }

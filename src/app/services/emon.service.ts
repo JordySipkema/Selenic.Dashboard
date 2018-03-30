@@ -1,7 +1,7 @@
 import {Injectable, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Http} from '@angular/http';
+import {Http, RequestOptions, Headers} from '@angular/http';
 
 @Injectable()
 export class EmonService {
@@ -9,11 +9,15 @@ export class EmonService {
   }
 
   getData(): Observable<EmonData[]> {
-    const apiurl = 'http://selenic-api.jordysipkema.nl/nodes/measurements/5/';
+    const apiurl = 'http://selenic-api.jordysipkema.nl/api/measurements/';
+    const options = new RequestOptions({
+      headers: new Headers({'X-ACCESS-TOKEN': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.' +
+        'eyJhZG1pbiI6ZmFsc2UsImlhdCI6MTUyMTcyNTI1N30.5S5hCeJBfQQzCo3bIZ4jY8RIyfjoeu8p4HkVRbSvpsQ'})
+    });
 
-    return this.http.get(apiurl)
+    return this.http.get(apiurl, options)
         .map(res => {
-          return res.json().result.map(item => {
+          return res.json().data.map(item => {
             return new EmonData(
                 item.data.Time,
                 item.data.Energy_1,

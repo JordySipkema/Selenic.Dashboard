@@ -13,15 +13,15 @@ import { LoaderComponent } from './loader/loader.component';
     RouterModule,
   ],
   declarations: [
-    FooterComponent, 
-    NavbarComponent, 
+    FooterComponent,
+    NavbarComponent,
     SidebarComponent,
     LoaderComponent
   ],
   exports: [
-    FooterComponent, 
-    NavbarComponent, 
-    SidebarComponent, 
+    FooterComponent,
+    NavbarComponent,
+    SidebarComponent,
     LoaderComponent
   ]
 })
