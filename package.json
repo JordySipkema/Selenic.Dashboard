@@ -10,6 +10,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "engines": {
+    "node": "^8.11.x",
+    "npm": "^5.x"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "^4.0.0",
@@ -31,6 +35,7 @@
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
+    "handlebars": "~4.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",
